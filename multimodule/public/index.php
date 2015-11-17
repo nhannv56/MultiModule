@@ -1,6 +1,7 @@
 <?php
 
 use Phalcon\Mvc\Application;
+use Phalcon\Config\Adapter\Ini;
 
 error_reporting(E_ALL);
 
@@ -12,7 +13,6 @@ try {
      * Read the configuration
      */
     $config = new Ini(APP_PATH  . "/apps/frontend/config/config.ini");
-
     /**
      * Include services
      */
