@@ -1,6 +1,6 @@
 <?php
 
-namespace multimodule\Backend;
+namespace Multimodule\Backend;
 
 use Phalcon\DiInterface;
 use Phalcon\Loader;
@@ -20,12 +20,10 @@ class Module implements ModuleDefinitionInterface
     {
 
         $loader = new Loader();
-
         $loader->registerNamespaces(array(
-            'multimodule\Backend\Controllers' => __DIR__ . '/controllers/',
-            'multimodule\Backend\Models' => __DIR__ . '/models/',
+            'Multimodule\Backend\Controllers' => __DIR__ . '/controllers/',
+            'Multimodule\Backend\Models' => __DIR__ . '/models/',
         ));
-
         $loader->register();
     }
 

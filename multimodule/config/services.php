@@ -12,21 +12,20 @@ use Phalcon\Session\Adapter\Files as SessionAdapter;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
+use Phalcon\Loader;
 
 /**
  * The FactoryDefault Dependency Injector automatically registers the right services to provide a full stack framework
  */
 $di = new FactoryDefault();
-
 /**
  * Registering a router
  */
 $di->setShared('router', function () {
-    $router = new Router();
-
+    $router = new Router(false);
+    
     $router->setDefaultModule('frontend');
-    $router->setDefaultNamespace('multimodule\Frontend\Controllers');
-
+    $router->setDefaultNamespace('Multimodule\Frontend\Controllers');
     return $router;
 });
 
@@ -79,7 +78,6 @@ $di->setShared('db', function () use ($config) {
 
     return new $class($dbConfig);
 });
-
 /**
  * If the configuration specify the use of metadata adapter use it or use memory otherwise
  */
@@ -102,6 +100,6 @@ $di->setShared('session', function () {
 */
 $di->setShared('dispatcher', function() use ($di) {
     $dispatcher = new Phalcon\Mvc\Dispatcher();
-    $dispatcher->setDefaultNamespace('multimodule\Frontend\Controllers');
+    $dispatcher->setDefaultNamespace('Multimodule\Frontend\Controllers');
     return $dispatcher;
 });

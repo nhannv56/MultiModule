@@ -1,6 +1,6 @@
 <?php
 
-namespace multimodule\Frontend;
+namespace Multimodule\Frontend;
 
 use Phalcon\DiInterface;
 use Phalcon\Loader;
@@ -22,8 +22,8 @@ class Module implements ModuleDefinitionInterface
         $loader = new Loader();
 
         $loader->registerNamespaces(array(
-            'multimodule\Frontend\Controllers' => __DIR__ . '/controllers/',
-            'multimodule\Frontend\Models' => __DIR__ . '/models/',
+            'Multimodule\Frontend\Controllers' => __DIR__ . '/controllers/',
+            'Multimodule\Frontend\Models' => __DIR__ . '/models/',
         ));
 
         $loader->register();

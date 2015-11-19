@@ -1,8 +1,8 @@
 <?php
 
-namespace multimodule\Backend\Controllers;
+namespace Multimodule\Backend\Controllers;
 
-use multimodule\Backend\Controllers\ControllerBase;
+use Multimodule\Backend\Controllers\ControllerBase;
 
 class IndexController extends ControllerBase
 {

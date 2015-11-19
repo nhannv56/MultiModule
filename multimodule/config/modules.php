@@ -1,15 +1,14 @@
 <?php
-
 /**
  * Register application modules
  */
 $application->registerModules ( array (
 		'frontend' => array (
-				'className' => 'multimodule\Frontend\Module',
+				'className' => 'Multimodule\Frontend\Module',
 				'path' => __DIR__ . '/../apps/frontend/Module.php' 
 		),
 		'backend' => array (
-				'className' => 'multimodule\Backend\Module',
+				'className' => 'Multimodule\Backend\Module',
 				'path' => __DIR__ . '/../apps/backend/Module.php' 
 		) 
 )
